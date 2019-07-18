@@ -1,0 +1,27 @@
+Set(INCLUDE_DIRECTORIES
+${CMAKE_SOURCE_DIR}/fairlogger
+)
+
+Set(SYSTEM_INCLUDE_DIRECTORIES
+  ${ROOT_INCLUDE_DIR} 
+)
+
+Include_Directories(${INCLUDE_DIRECTORIES})
+Include_Directories(SYSTEM ${SYSTEM_INCLUDE_DIRECTORIES})
+
+Set(LINK_DIRECTORIES
+  ${ROOT_LIBRARY_DIR}
+)
+
+Link_Directories(${LINK_DIRECTORIES})
+
+Set(SRCS
+	Logger.cxx
+)
+Set(HEADERS )
+Set(LINKDEF LoggerLinkDef.h )
+Set(LIBRARY_NAME Logger)
+Set(DEPENDENCIES Core RIO Tree Physics)
+
+GENERATE_LIBRARY()
+
